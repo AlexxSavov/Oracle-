@@ -39,7 +39,7 @@ var formSubmitHandler = function (event) {
 
 // Get weather information from OpenWeather
 var getWeatherInfo = function (cityname) {
-    var apiCityUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityname + "&units=imperial&appid=f97301447cbd41068af8623a398ba1fb";
+    var apiCityUrl = "https://api.openweathermap.org/data/2.5/weather?q=41f99f0ae42a9594bfba8588d6d69cb2" + searchEl + "&appid=41f99f0ae42a9594bfba8588d6d69cb2" + cityname + "&units=imperial&appid=41f99f0ae42a9594bfba8588d6d69cb2";
     fetch(
         // Make a fetch request using city name to get latitude and longitude for city
         apiCityUrl
@@ -72,7 +72,7 @@ var getWeatherInfo = function (cityname) {
             fiveDayCardEl.classList.remove("hidden");
 
             // Return a fetch request to the OpenWeather using longitude and latitude from pervious fetch
-            return fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&exclude=alerts,minutely,hourly&units=imperial&appid=f97301447cbd41068af8623a398ba1fb');
+            return fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + '&lon=' + longitude + '&exclude=alerts,minutely,hourly&units=imperial&appid=41f99f0ae42a9594bfba8588d6d69cb2');
         })
         .then(function (response) {
             // return response in json format
